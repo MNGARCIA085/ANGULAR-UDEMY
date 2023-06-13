@@ -1,0 +1,31 @@
+
+
+<h1> LISTADO </h1>
+
+<mat-divider></mat-divider>
+
+
+<div fxLayout="row wrap"
+      fxLayout.xs="column"
+      fxLayoutAlign="center"
+      fxLayoutGap="20px">
+    
+    <div  *ngFor="let heroe of heroes"
+                fxFlex="20"
+                fxFlex.lg="15"
+                fxFlx.sm="30">
+
+        <!-- pongo el componente tarjeta pasándole el héroe-->
+        <app-heroe-tarjeta [heroe]="heroe"></app-heroe-tarjeta>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+

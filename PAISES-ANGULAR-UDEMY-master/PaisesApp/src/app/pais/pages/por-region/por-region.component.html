@@ -1,0 +1,46 @@
+
+<div class="animate__animated animate__fadeIn animate__faster">
+
+    <h1> Buscar por región</h1>
+    <hr>
+    
+    <h3> Región activa: {{regionActiva | titlecase }}</h3>
+    
+    <br>
+    
+
+</div>
+
+
+
+<!-- quiero que la clase activa se muetsre diferente, hay varias formas de hacerlo-->
+
+
+<!-- [class.btn-primary]="region === regionActiva"-->
+
+
+
+<h4> Seleccione la región</h4>
+<br>
+
+<div class="row">
+    <div class="col">
+        <button *ngFor="let region of regiones"
+                [class]="getClaseCSS(region)"
+                (click)="activarRegion(region)">
+                {{region}}
+        </button>
+    </div>
+</div>
+
+
+<br>
+
+
+<!--mostrar los resultados-->
+<div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+        <app-pais-tabla [paises]="paises"></app-pais-tabla> 
+    </div>
+ </div>
+

@@ -1,0 +1,105 @@
+
+
+
+<br>
+<div class="text-center">
+    <h1> COURSE DETAIL</h1>
+</div>
+
+
+<hr>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        
+
+        <h3> <b>TITLE</b></h3>
+        <p>{{title}}</p>
+        
+        <BR>
+        
+        <h3> <b>INSTRUCTOR</b></h3>
+        <p>{{instructor}}</p>
+
+        <br>
+        
+        <h3> <b>LINK</b></h3>
+        <p><a href="{{link}}" target="blanck_1">Link</a></p>
+        
+        
+        <BR>
+        
+        <h3> <b>DESCRIPTION</b></h3>
+        <p>{{description}}
+        </p>
+        
+        
+        <br>
+        
+        <h3> <b>CERTIFICATE</b></h3>
+        <p><a href="{{certificate}}" target="blanck_2">Certificate</a></p>
+        
+        
+        <br>
+        
+
+
+        <div *ngIf="repo.length > 0">
+          <h3> <b>REPO</b></h3>
+          <p *ngFor="let r of repo">
+              <a href="{{r}}" target="blanck_3">{{r}}</a>
+          </p>
+        </div>
+        
+
+
+      </div>
+      <div class="col-sm">
+        
+
+            
+        <img src="{{image}}" title="image" width=250px/>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<!--
+
+<li *ngFor="let c of course">
+    {{c._id}}
+</li>
+
+-->
+
+
+<mat-divider></mat-divider>
+
+
+
+
+
+

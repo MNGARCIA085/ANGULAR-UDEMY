@@ -1,0 +1,146 @@
+<h2>Add course</h2>
+
+
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)="guardar()"  [formGroup]="miFormulario"  autocomplete="off">
+
+            <!-- Title -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Title</label>
+                <div class="col-sm-9">
+                    <input type="text"
+                            class="form-control"
+                            formControlName="title"
+                            placeholder="Title">
+                </div>
+            </div>
+
+            <!-- Certificate -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Certificate</label>
+                <div class="col-sm-9">
+                    <input type="text"
+                            class="form-control"
+                            formControlName="certificate"
+                            placeholder="Certificate">
+                </div>
+            </div>
+
+            <!-- Title -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Link</label>
+                <div class="col-sm-9">
+                    <input type="text"
+                            class="form-control"
+                            formControlName="link"
+                            placeholder="Link">
+                </div>
+            </div>
+
+            
+
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Add repo</label>
+                <div class="col-sm-9">
+            
+                    <div class="input-group">
+                        <input type="text"
+                            class="form-control"
+                            [formControl]="nuevoRepo"
+                            (keyup.enter)="agregarRepo()"
+                            placeholder="Agregar repo">
+                                    
+                            <button class="btn btn-outline-primary" 
+                                    (click)="agregarRepo()"
+                                    type="button">
+                                    Agregar
+                            </button>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- Listado de favoritos-->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Listado de repos</label>
+                <div class="col-sm-9"
+                     formArrayName="repo">
+
+                    <div class="input-group mb-1"
+                            *ngFor="let favorito of repoArr.controls; let i = index">
+                        
+                        <input class="form-control"
+                                [formControlName]="i">
+
+                        <button class="btn btn-outline-danger"
+                                (click)="eliminarRepo(i)">
+                            Eliminar
+                        </button>
+
+                    </div>
+      
+                </div>
+            </div>
+
+
+
+
+
+            <!-- Title -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Description</label>
+                <div class="col-sm-9">
+                    <input type="textarea"
+                            class="form-control"
+                            formControlName="description"
+                            placeholder="Description">
+                </div>
+            </div>
+            <!-- Title -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Instructor</label>
+                <div class="col-sm-9">
+                    <input type="text"
+                            class="form-control"
+                            formControlName="instructor"
+                            placeholder="Instructor">
+                </div>
+            </div>
+
+            <!-- Title -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Image</label>
+                <div class="col-sm-9">
+                    <input type="text"
+                            class="form-control"
+                            formControlName="image"
+                            placeholder="Image">
+                </div>
+            </div>
+
+
+
+                <!-- botón de envío -->
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" 
+                                
+                                class="btn btn-primary float-end">
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+
+        </form>
+
+
+
+    </div>
+</div>

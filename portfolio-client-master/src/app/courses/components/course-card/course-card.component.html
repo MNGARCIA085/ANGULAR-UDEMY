@@ -1,0 +1,50 @@
+
+<mat-card>
+
+    <mat-card-header height="200px">
+        <div style="text-align:center; height:50px; margin-bottom:20px; line-height:170%">
+            <mat-card-title>{{course.title | uppercase }}</mat-card-title>
+        </div>
+        
+        <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+
+    <br>
+
+    <!--imagen-->
+    <div style="text-align:center">
+        <img src={{course.image}} title="image" height="100px"/>
+    </div>
+    
+
+
+
+
+
+    <br> <br>
+
+    <mat-card-content>
+        <p>
+            <strong>INSTRUCTOR : </strong> {{course.instructor}}
+        </p>
+        <p>
+            <strong><a href="{{course.link}}" target="blanck">LINK</a></strong> 
+        </p>
+    </mat-card-content>
+
+
+    <mat-card-actions>
+        <button mat-button 
+                [routerLink]="['/courses/detail',course._id]"
+                color="primary">
+            Detail
+        </button>
+    </mat-card-actions>
+
+
+</mat-card>
+
+<br>
+
+
+

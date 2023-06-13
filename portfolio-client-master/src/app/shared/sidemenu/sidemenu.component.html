@@ -1,0 +1,62 @@
+<mat-sidenav-container fullscreen>
+
+
+  <mat-sidenav #sidenav mode="push" [fixedInViewport]="false"
+                 [fixedTopGap]="0"
+                 [fixedBottomGap]="0">
+
+      <mat-toolbar color="primary">
+          <span>MENU</span>
+          <span class="spacer"></span>
+          <button mat-icon-button (click)="sidenav.toggle()">
+              <mat-icon>menu</mat-icon>
+          </button>
+      </mat-toolbar>
+
+      <mat-nav-list>
+          <a routerLink="./courses"
+                          mat-list-item
+                          (click)="sidenav.toggle()">
+              <mat-icon mat-list-icon>label</mat-icon>
+              <span>Courses and Specializations</span>
+          </a>
+      </mat-nav-list>
+
+
+
+      <mat-nav-list>
+          <a routerLink="./about"
+                          mat-list-item
+                          (click)="sidenav.toggle()">
+              <mat-icon mat-list-icon>search</mat-icon>
+              <span>About me</span>
+          </a>
+      </mat-nav-list>
+
+
+  </mat-sidenav>
+
+  <mat-toolbar>
+      <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+      </button>
+
+      <!---
+      <span class="spacer"></span>
+      <button mat-button >  (click)
+          <span> Usuario</span>
+          Logout
+      </button>
+    -->
+
+  </mat-toolbar>
+
+
+      <div class="container">
+          <router-outlet></router-outlet>
+          <app-footer></app-footer>
+      </div>
+
+
+  </mat-sidenav-container>
+

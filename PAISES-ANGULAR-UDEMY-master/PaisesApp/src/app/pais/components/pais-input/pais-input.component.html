@@ -1,0 +1,15 @@
+<!-- formulario para buscar -->
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="buscar()" autcomplete="off">
+            <input type='text'
+                   name="termino"
+                   class="form-control"
+                   [(ngModel)]="termino"
+                   (input)="teclaPresionada( $event )"   mandamos el evento
+                   placeholder="Buscar por pais..."/>
+        </form>
+    </div>
+ </div>
+ 
+ 

@@ -1,0 +1,108 @@
+
+
+<h2>Reactive: dinámicos</h2>
+
+
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)="guardar()"  [formGroup]="miFormulario"  autocomplete="off">
+
+            <!-- Nombre -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Nombre</label>
+                <div class="col-sm-9">
+                    <input type="text"
+                            class="form-control"
+                            formControlName="nombre"
+                            placeholder="Nombre">
+
+                        <span class="form-text text-danger"
+                            *ngIf="campoEsValido('nombre')">
+                                Campo obligatorio
+                        </span>
+
+                </div>
+            </div>
+
+
+
+
+            <!-- Agregar favorito -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Agregar favorito</label>
+                <div class="col-sm-9">
+            
+                    <div class="input-group">
+                        <input type="text"
+                            class="form-control"
+                            [formControl]="nuevoFavorito"
+                            (keyup.enter)="agregarFavorito()"
+                            placeholder="Agregar favorito">
+                                    
+                            <button class="btn btn-outline-primary" 
+                                    (click)="agregarFavorito()"
+                                    type="button">
+                                    Agregar
+                            </button>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- Listado de favoritos-->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Listado de favoritos</label>
+                <div class="col-sm-9"
+                     formArrayName="favoritos">
+
+                    <div class="input-group mb-1"
+                            *ngFor="let favorito of favoritosArr.controls; let i = index">
+                        
+                        <input class="form-control"
+                                [formControlName]="i">
+
+                        <button class="btn btn-outline-danger"
+                                (click)="eliminar(i)">
+                            Eliminar
+                        </button>
+
+                    </div>
+      
+                </div>
+            </div>
+
+
+
+
+                <!-- botón de envío -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button"
+                                (click)="guardar()"
+                                class="btn btn-primary float-end">
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+
+        </form>
+
+
+
+    </div>
+</div>
+
+
+
+
+<pre> {{miFormulario.value.favoritos}} </pre>
+
+
+
+
+

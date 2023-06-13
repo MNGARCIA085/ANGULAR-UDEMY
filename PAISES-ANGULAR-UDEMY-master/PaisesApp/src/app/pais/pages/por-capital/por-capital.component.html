@@ -1,0 +1,42 @@
+
+<div class="animate__animated animate__fadeIn animate__faster">
+
+   <h3>Por Capital</h3>
+ 
+   <hr>
+    
+   <!-- escucho el evento onEnter y mando a llamar a buscar de por-pais.component-->
+   <app-pais-input
+      (onEnter)="buscar( $event )"
+      (onDebounce)="sugerencias( $event )"
+      >
+    
+   </app-pais-input>
+   
+   <hr>
+
+</div>
+
+
+
+ 
+ 
+<!-- se muestra en caso que no se encuentre nada-->
+<div *ngIf="hayError" class="alert alert-danger">
+   No se encontró nada con el término {{termino}}
+</div>
+ 
+ 
+ 
+ 
+ 
+<!--mostrar los resultados-->
+<div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+  
+            <app-pais-tabla [paises]="paises"></app-pais-tabla> <!-- le paso los países al componente para que los muestre-->
+    </div>
+ </div>
+ 
+ 
+

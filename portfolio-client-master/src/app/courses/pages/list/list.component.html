@@ -1,0 +1,45 @@
+<br>
+<div class="text-center">
+    <h1> <b>COURSES AND SPECIALIZATIONS </b></h1>
+</div>
+
+
+<br>
+
+
+<div class="d-flex justify-content-between">
+  <div>
+  </div>
+  <div>
+  <div class="row">
+    <div class="col">
+      <input
+        type="text"
+        placeholder="search"
+        class="form-control"
+        id="searchQuery"
+        (input)="onSearchQueryInput($event)"
+      />
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<br><br>
+
+<div fxLayout="row wrap"
+      fxLayout.xs="column"
+      fxLayoutAlign="center"
+      fxLayoutGap="20px"
+      >
+    
+    <div  *ngFor="let course of filteredCourses"
+      fxFlex="40"
+      fxFlex.lg="20"
+      fxFlx.sm="80">
+         <!-- pongo el componente tarjeta pasándole el curso-->
+         <app-course-card [course]="course"></app-course-card>
+    </div>
+</div>
+
